@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <defs>
+    <linearGradient id="platform" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0b1428"/>
+      <stop offset="100%" stop-color="#050a16"/>
+    </linearGradient>
+    <linearGradient id="pGrad" x1="0.32" y1="0" x2="0.55" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="46%" stop-color="#f6fbff"/>
+      <stop offset="63%" stop-color="#c3e2ff"/>
+      <stop offset="79%" stop-color="#3398ff"/>
+      <stop offset="100%" stop-color="#0666ff"/>
+    </linearGradient>
+    <radialGradient id="lens" cx="0.36" cy="0.30" r="0.85">
+      <stop offset="0%" stop-color="#8cc6ff"/>
+      <stop offset="45%" stop-color="#2f8fff"/>
+      <stop offset="100%" stop-color="#0a3fd0"/>
+    </radialGradient>
+    <filter id="pShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="16" stdDeviation="20" flood-color="#000814" flood-opacity="0.5"/>
+    </filter>
+  </defs>
+
+  <!-- background + rounded platform -->
+  <rect width="1024" height="1024" fill="#04070f"/>
+  <rect x="72" y="72" width="880" height="880" rx="208" fill="url(#platform)"/>
+  <rect x="73" y="73" width="878" height="878" rx="207" fill="none"
+        stroke="#ffffff" stroke-opacity="0.05" stroke-width="2"/>
+
+  <!-- letter P with counter (even-odd hole) -->
+  <path filter="url(#pShadow)" fill="url(#pGrad)" fill-rule="evenodd"
+        d="M 285 216
+           L 596 216
+           C 706 216 782 302 782 428
+           C 782 548 706 640 596 640
+           L 392 640
+           L 392 706
+           L 285 845
+           Z
+           M 392 296
+           L 596 296
+           C 660 296 700 350 700 428
+           C 700 506 660 560 596 560
+           L 392 560
+           Z"/>
+
+  <!-- scan brackets inside the counter -->
+  <g fill="none" stroke="#35d6ff" stroke-width="18" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M 416 368 V 320 H 464"/>
+    <path d="M 676 368 V 320 H 628"/>
+    <path d="M 416 488 V 536 H 464"/>
+    <path d="M 676 488 V 536 H 628"/>
+  </g>
+
+  <!-- magnifier: dark separation, lens, white ring, handle, gloss -->
+  <g stroke-linecap="round">
+    <line x1="614" y1="510" x2="688" y2="584" stroke="#061021" stroke-width="58"/>
+    <circle cx="555" cy="450" r="84" fill="none" stroke="#061021" stroke-width="54"/>
+    <circle cx="555" cy="450" r="70" fill="url(#lens)"/>
+    <circle cx="555" cy="450" r="84" fill="none" stroke="#ffffff" stroke-width="30"/>
+    <line x1="614" y1="510" x2="688" y2="584" stroke="#ffffff" stroke-width="34"/>
+    <ellipse cx="530" cy="424" rx="30" ry="19" fill="#ffffff" opacity="0.55"
+             transform="rotate(-32 530 424)"/>
+  </g>
+</svg>
