@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <defs>
+    <linearGradient id="upSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1a33"/>
+      <stop offset="100%" stop-color="#1d5a64"/>
+    </linearGradient>
+    <marker id="upArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#4d8dff"/>
+    </marker>
+  </defs>
+
+  <rect width="900" height="600" fill="#04060d"/>
+  <rect x="48" y="66" width="804" height="468" rx="22" fill="#070c18" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <!-- selected file card -->
+  <rect x="104" y="150" width="300" height="240" rx="16" fill="#0a101f" stroke="#4d8dff" stroke-opacity="0.55" stroke-width="2"/>
+  <rect x="122" y="168" width="264" height="150" rx="10" fill="url(#upSky)"/>
+  <circle cx="330" cy="204" r="18" fill="#f4efe0" opacity="0.9"/>
+  <g fill="#08111f">
+    <rect x="122" y="258" width="46" height="60"/>
+    <rect x="170" y="238" width="36" height="80"/>
+    <rect x="210" y="268" width="52" height="50"/>
+    <rect x="266" y="248" width="34" height="70"/>
+    <rect x="304" y="262" width="82" height="56"/>
+  </g>
+  <rect x="122" y="332" width="150" height="12" rx="6" fill="#ffffff" fill-opacity="0.55"/>
+  <rect x="122" y="354" width="96" height="10" rx="5" fill="#ffffff" fill-opacity="0.28"/>
+
+  <!-- transfer arrow -->
+  <line x1="430" y1="270" x2="576" y2="270" stroke="#4d8dff" stroke-width="3.5"
+        stroke-dasharray="14 12" marker-end="url(#upArrow)"/>
+  <text x="446" y="246" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" fill="#8fb2ff">→</text>
+
+  <!-- intake tray -->
+  <path d="M614 240 h188 a14 14 0 0 1 14 14 v108 a14 14 0 0 1 -14 14 h-188 a14 14 0 0 1 -14 -14 v-108 a14 14 0 0 1 14 -14 z"
+        fill="#0a101f" stroke="#ffffff" stroke-opacity="0.2" stroke-width="2"/>
+  <path d="M600 300 h216" stroke="#4d8dff" stroke-opacity="0.0" />
+  <g stroke="#4d8dff" stroke-width="4" stroke-linecap="round" fill="none">
+    <line x1="708" y1="286" x2="708" y2="330"/>
+    <path d="M690 306 l18 -18 l18 18"/>
+  </g>
+  <rect x="614" y="366" width="188" height="34" rx="17" fill="#3ddc97" fill-opacity="0.12" stroke="#3ddc97" stroke-opacity="0.5"/>
+  <text x="644" y="389" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="17" fill="#79e8b6">SIGNED UPLOAD</text>
+
+  <!-- footer strip -->
+  <line x1="104" y1="446" x2="796" y2="446" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5"/>
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#ffffff" fill-opacity="0.5">
+    <text x="104" y="490">CONTENT-SNIFFED · NOT EXTENSION-TRUSTED</text>
+    <text x="586" y="490" fill="#8fb2ff">≤ 8 MB</text>
+  </g>
+</svg>

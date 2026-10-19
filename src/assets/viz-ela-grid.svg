@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <defs>
+    <radialGradient id="elaHot">
+      <stop offset="0%" stop-color="#ffd08a" stop-opacity="0.95"/>
+      <stop offset="55%" stop-color="#ff9d3c" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#ff9d3c" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="elaCool">
+      <stop offset="0%" stop-color="#7fa8ff" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#7fa8ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="elaGreen">
+      <stop offset="0%" stop-color="#9be7c4" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#9be7c4" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="elaBlur" x="-40%" y="-40%" width="180%" height="180%">
+      <feGaussianBlur stdDeviation="22"/>
+    </filter>
+  </defs>
+
+  <rect width="900" height="600" fill="#04060d"/>
+
+  <!-- amplified reaction regions -->
+  <ellipse cx="576" cy="222" rx="150" ry="108" fill="url(#elaHot)" filter="url(#elaBlur)"/>
+  <ellipse cx="252" cy="384" rx="188" ry="128" fill="url(#elaCool)" filter="url(#elaBlur)"/>
+  <ellipse cx="470" cy="516" rx="150" ry="84" fill="url(#elaGreen)" filter="url(#elaBlur)"/>
+  <ellipse cx="790" cy="470" rx="90" ry="70" fill="url(#elaCool)" filter="url(#elaBlur)" opacity="0.6"/>
+
+  <!-- speckle texture -->
+  <g fill="#ffe6bd">
+    <circle cx="540" cy="196" r="2.4" opacity="0.9"/>
+    <circle cx="602" cy="244" r="1.8" opacity="0.7"/>
+    <circle cx="572" cy="270" r="1.4" opacity="0.6"/>
+    <circle cx="180" cy="330" r="1.6" opacity="0.5"/>
+    <circle cx="330" cy="430" r="1.4" opacity="0.4"/>
+    <circle cx="700" cy="120" r="1.6" opacity="0.5"/>
+    <circle cx="420" cy="90" r="1.4" opacity="0.4"/>
+    <circle cx="830" cy="300" r="1.8" opacity="0.5"/>
+  </g>
+
+  <!-- 4×4 analysis grid -->
+  <g stroke="#ffffff" stroke-opacity="0.12" stroke-width="1.5">
+    <line x1="225" y1="0" x2="225" y2="600"/>
+    <line x1="450" y1="0" x2="450" y2="600"/>
+    <line x1="675" y1="0" x2="675" y2="600"/>
+    <line x1="0" y1="150" x2="900" y2="150"/>
+    <line x1="0" y1="300" x2="900" y2="300"/>
+    <line x1="0" y1="450" x2="900" y2="450"/>
+  </g>
+
+  <!-- hotspot cell under inspection -->
+  <rect x="453" y="153" width="219" height="144" fill="#ffb454" fill-opacity="0.08"
+        stroke="#ffb454" stroke-width="3"/>
+  <g stroke="#ffb454" stroke-width="5" stroke-linecap="round">
+    <line x1="453" y1="177" x2="453" y2="153"/>
+    <line x1="453" y1="153" x2="477" y2="153"/>
+    <line x1="672" y1="273" x2="672" y2="297"/>
+    <line x1="672" y1="297" x2="648" y2="297"/>
+  </g>
+
+  <!-- HUD labels -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" letter-spacing="2">
+    <text x="30" y="44" fill="#ffffff" fill-opacity="0.55">ELA · Q90 ×15 AMPLIFY</text>
+    <text x="453" y="330" fill="#ffb454">REGION 3,2 · P99.4</text>
+    <text x="30" y="572" fill="#ffffff" fill-opacity="0.35">GRID 4×4 · DOMINANCE ≥ 2.5× MEDIAN</text>
+  </g>
+</svg>

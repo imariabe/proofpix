@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <defs>
+    <linearGradient id="scanSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0c1a33"/>
+      <stop offset="100%" stop-color="#1d5a64"/>
+    </linearGradient>
+    <linearGradient id="scanBeam" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#4d8dff" stop-opacity="0"/>
+      <stop offset="70%" stop-color="#4d8dff" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#9be7ff" stop-opacity="0.9"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="900" height="600" fill="#04060d"/>
+  <rect x="48" y="66" width="804" height="468" rx="22" fill="#070c18" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <!-- specimen being scanned -->
+  <rect x="104" y="128" width="368" height="290" rx="16" fill="#0a101f" stroke="#ffffff" stroke-opacity="0.14" stroke-width="2"/>
+  <rect x="122" y="146" width="332" height="208" rx="10" fill="url(#scanSky)"/>
+  <circle cx="400" cy="188" r="22" fill="#f4efe0" opacity="0.9"/>
+  <g fill="#08111f">
+    <rect x="122" y="270" width="58" height="84"/>
+    <rect x="184" y="244" width="44" height="110"/>
+    <rect x="232" y="286" width="66" height="68"/>
+    <rect x="304" y="258" width="42" height="96"/>
+    <rect x="350" y="278" width="104" height="76"/>
+  </g>
+  <g fill="#ffb454" opacity="0.85">
+    <rect x="136" y="288" width="9" height="7" rx="2"/>
+    <rect x="196" y="262" width="9" height="7" rx="2"/>
+    <rect x="248" y="304" width="9" height="7" rx="2"/>
+    <rect x="366" y="296" width="9" height="7" rx="2"/>
+  </g>
+  <!-- moving beam -->
+  <rect x="122" y="270" width="332" height="34" fill="url(#scanBeam)"/>
+  <line x1="122" y1="304" x2="454" y2="304" stroke="#9be7ff" stroke-width="2.5" opacity="0.9"/>
+  <!-- corner brackets -->
+  <g stroke="#4d8dff" stroke-width="3" fill="none">
+    <path d="M118 172 V144 H146"/>
+    <path d="M438 144 H466 V172"/>
+    <path d="M466 374 V402 H438"/>
+    <path d="M146 402 H118 V374"/>
+  </g>
+
+  <!-- live step checklist -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="21">
+    <g>
+      <circle cx="556" cy="170" r="13" fill="#3ddc97" fill-opacity="0.18" stroke="#3ddc97" stroke-width="2.5"/>
+      <path d="M549 170 l5 5 l10 -11" stroke="#79e8b6" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <text x="584" y="178" fill="#ffffff" fill-opacity="0.8">validate</text>
+    </g>
+    <g>
+      <circle cx="556" cy="228" r="13" fill="#3ddc97" fill-opacity="0.18" stroke="#3ddc97" stroke-width="2.5"/>
+      <path d="M549 228 l5 5 l10 -11" stroke="#79e8b6" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <text x="584" y="236" fill="#ffffff" fill-opacity="0.8">metadata</text>
+    </g>
+    <g>
+      <circle cx="556" cy="286" r="13" fill="#3ddc97" fill-opacity="0.18" stroke="#3ddc97" stroke-width="2.5"/>
+      <path d="M549 286 l5 5 l10 -11" stroke="#79e8b6" stroke-width="2.6" fill="none" stroke-linecap="round"/>
+      <text x="584" y="294" fill="#ffffff" fill-opacity="0.8">structure</text>
+    </g>
+    <g>
+      <circle cx="556" cy="344" r="13" fill="#ffb454" fill-opacity="0.2" stroke="#ffb454" stroke-width="2.5"/>
+      <circle cx="556" cy="344" r="4" fill="#ffcf8f"/>
+      <text x="584" y="352" fill="#ffcf8f">compression · ELA</text>
+    </g>
+    <g opacity="0.45">
+      <circle cx="556" cy="402" r="13" fill="none" stroke="#ffffff" stroke-opacity="0.5" stroke-width="2.5" stroke-dasharray="5 5"/>
+      <text x="584" y="410" fill="#ffffff" fill-opacity="0.7">report</text>
+    </g>
+  </g>
+
+  <!-- progress -->
+  <rect x="104" y="462" width="692" height="10" rx="5" fill="#ffffff" fill-opacity="0.1"/>
+  <rect x="104" y="462" width="470" height="10" rx="5" fill="#4d8dff"/>
+  <text x="104" y="510" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" fill="#8fb2ff">4 / 6 STEPS · REAL COMPLETION ONLY</text>
+</svg>

@@ -146,6 +146,66 @@
   }
 }
 
+/* ------------------------------------------------------------------ *
+ * Landing motion — instrument sweep, hotspot pulse, ticker.
+ * Additive only: no theme or utility foundations are changed.
+ * ------------------------------------------------------------------ */
+@keyframes pp-sweep {
+  0% {
+    transform: translateY(-8%);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(1400%);
+    opacity: 0;
+  }
+}
+
+@keyframes pp-pulse {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes pp-ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.pp-sweep {
+  animation: pp-sweep 6s linear infinite;
+}
+.pp-pulse {
+  animation: pp-pulse 2.6s ease-in-out infinite;
+}
+.pp-ticker {
+  animation: pp-ticker 42s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pp-sweep,
+  .pp-pulse,
+  .pp-ticker {
+    animation: none !important;
+  }
+}
+
 /* Report export: print the report, hide app chrome. */
 @media print {
   .print-hide {

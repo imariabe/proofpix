@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <rect width="900" height="600" fill="#04060d"/>
+
+  <rect x="60" y="54" width="780" height="492" rx="20" fill="#0a101f" stroke="#ffffff" stroke-opacity="0.09"/>
+
+  <!-- header -->
+  <rect x="94" y="88" width="196" height="42" rx="21" fill="#4d8dff" fill-opacity="0.14" stroke="#4d8dff" stroke-opacity="0.45"/>
+  <text x="120" y="115" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" fill="#8fb2ff" letter-spacing="1">EXIF · IFD0 + EXIF</text>
+  <circle cx="786" cy="109" r="9" fill="#3ddc97"/>
+  <text x="640" y="116" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="18" fill="#ffffff" fill-opacity="0.55">READABLE</text>
+
+  <line x1="94" y1="156" x2="806" y2="156" stroke="#ffffff" stroke-opacity="0.08" stroke-width="1.5"/>
+
+  <!-- field rows -->
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22">
+    <g fill="#ffffff" fill-opacity="0.45">
+      <text x="98" y="208">Make</text>
+      <text x="98" y="268">Model</text>
+      <text x="98" y="328">DateTimeOriginal</text>
+      <text x="98" y="388">Software</text>
+      <text x="98" y="448">GPSLatitude</text>
+    </g>
+    <g fill="#cfe0ff">
+      <text x="380" y="208">NIKON CORPORATION</text>
+      <text x="380" y="268">Z 6II</text>
+      <text x="380" y="328">2026:03:14 09:12:41</text>
+      <text x="380" y="388">Snapseed 3.2</text>
+    </g>
+    <!-- struck-through: field not present -->
+    <text x="380" y="448" fill="#ffffff" fill-opacity="0.35">— absent —</text>
+    <line x1="374" y1="441" x2="560" y2="441" stroke="#ff8fa0" stroke-opacity="0.8" stroke-width="2.5"/>
+  </g>
+
+  <g stroke="#ffffff" stroke-opacity="0.06" stroke-width="1.5">
+    <line x1="94" y1="232" x2="806" y2="232"/>
+    <line x1="94" y1="292" x2="806" y2="292"/>
+    <line x1="94" y1="352" x2="806" y2="352"/>
+    <line x1="94" y1="412" x2="806" y2="412"/>
+  </g>
+
+  <!-- footer chips -->
+  <rect x="94" y="478" width="230" height="44" rx="22" fill="#3ddc97" fill-opacity="0.13" stroke="#3ddc97" stroke-opacity="0.5"/>
+  <text x="118" y="506" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#79e8b6">12 FIELDS READ</text>
+  <rect x="342" y="478" width="266" height="44" rx="22" fill="#ffb454" fill-opacity="0.12" stroke="#ffb454" stroke-opacity="0.5"/>
+  <text x="366" y="506" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#ffcf8f">SOFTWARE = EDITOR</text>
+</svg>

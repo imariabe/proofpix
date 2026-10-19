@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600" width="900" height="600">
+  <rect width="900" height="600" fill="#04060d"/>
+  <rect x="48" y="66" width="804" height="468" rx="22" fill="#070c18" stroke="#ffffff" stroke-opacity="0.08"/>
+
+  <!-- report page -->
+  <rect x="150" y="98" width="600" height="410" rx="18" fill="#0a101f" stroke="#ffffff" stroke-opacity="0.12" stroke-width="2"/>
+
+  <!-- title row -->
+  <rect x="184" y="132" width="240" height="16" rx="8" fill="#ffffff" fill-opacity="0.75"/>
+  <rect x="184" y="160" width="150" height="11" rx="5.5" fill="#ffffff" fill-opacity="0.3"/>
+
+  <!-- overall reading pill -->
+  <rect x="184" y="196" width="368" height="44" rx="22" fill="#ffb454" fill-opacity="0.12" stroke="#ffb454" stroke-opacity="0.55" stroke-width="2"/>
+  <path d="M206 210 l10 18 l-20 0 z" fill="#ffcf8f"/>
+  <text x="232" y="224" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="19" fill="#ffcf8f">POTENTIAL INCONSISTENCIES</text>
+
+  <!-- evidence rows -->
+  <g>
+    <rect x="184" y="266" width="532" height="54" rx="12" fill="#3ddc97" fill-opacity="0.07" stroke="#3ddc97" stroke-opacity="0.35"/>
+    <circle cx="212" cy="293" r="11" fill="#3ddc97" fill-opacity="0.2"/>
+    <path d="M206 293 l4 4 l8 -9" stroke="#79e8b6" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+    <rect x="238" y="282" width="220" height="10" rx="5" fill="#ffffff" fill-opacity="0.55"/>
+    <rect x="238" y="300" width="320" height="8" rx="4" fill="#ffffff" fill-opacity="0.22"/>
+  </g>
+  <g>
+    <rect x="184" y="332" width="532" height="54" rx="12" fill="#ffb454" fill-opacity="0.07" stroke="#ffb454" stroke-opacity="0.4"/>
+    <path d="M212 318 l11 20 l-22 0 z" fill="#ffcf8f" fill-opacity="0.85"/>
+    <rect x="238" y="348" width="260" height="10" rx="5" fill="#ffffff" fill-opacity="0.55"/>
+    <rect x="238" y="366" width="300" height="8" rx="4" fill="#ffffff" fill-opacity="0.22"/>
+  </g>
+  <g>
+    <rect x="184" y="398" width="532" height="54" rx="12" fill="#4d8dff" fill-opacity="0.07" stroke="#4d8dff" stroke-opacity="0.35"/>
+    <circle cx="212" cy="425" r="11" fill="#4d8dff" fill-opacity="0.25"/>
+    <text x="207" y="431" font-family="ui-monospace, monospace" font-size="15" fill="#8fb2ff">i</text>
+    <rect x="238" y="414" width="196" height="10" rx="5" fill="#ffffff" fill-opacity="0.55"/>
+    <rect x="238" y="432" width="286" height="8" rx="4" fill="#ffffff" fill-opacity="0.22"/>
+  </g>
+
+  <!-- export bar -->
+  <rect x="184" y="466" width="150" height="30" rx="15" fill="#4d8dff" fill-opacity="0.2" stroke="#4d8dff" stroke-opacity="0.5"/>
+  <text x="206" y="487" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#8fb2ff">PRINT · PDF</text>
+  <rect x="348" y="466" width="130" height="30" rx="15" fill="#ffffff" fill-opacity="0.06" stroke="#ffffff" stroke-opacity="0.18"/>
+  <text x="370" y="487" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" fill="#ffffff" fill-opacity="0.6">JSON</text>
+
+  <!-- floating counts -->
+  <rect x="596" y="132" width="120" height="66" rx="14" fill="#0d1526" stroke="#3ddc97" stroke-opacity="0.45"/>
+  <text x="614" y="164" font-family="ui-monospace, monospace" font-size="26" fill="#79e8b6">05</text>
+  <text x="614" y="186" font-family="ui-monospace, monospace" font-size="13" fill="#ffffff" fill-opacity="0.55" letter-spacing="1">CONFIRMED</text>
+  <rect x="596" y="210" width="120" height="66" rx="14" fill="#0d1526" stroke="#ffb454" stroke-opacity="0.45"/>
+  <text x="614" y="242" font-family="ui-monospace, monospace" font-size="26" fill="#ffcf8f">02</text>
+  <text x="614" y="264" font-family="ui-monospace, monospace" font-size="13" fill="#ffffff" fill-opacity="0.55" letter-spacing="1">WARNINGS</text>
+</svg>
