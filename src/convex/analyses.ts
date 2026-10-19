@@ -9,6 +9,24 @@ import {
 } from "./_generated/server";
 import { MAX_UPLOAD_BYTES } from "../lib/forensics/sniff";
 import { ASSESSMENT_LABELS } from "../lib/forensics/types";
+import type { Id } from "./_generated/dataModel";
+
+/**
+ * Storage deletes are best-effort: validation failures already delete the
+ * uploaded blob immediately, so a later report deletion must not throw when
+ * the file is gone.
+ */
+async function safeDeleteFile(
+  ctx: MutationCtx,
+  id: Id<"_storage"> | undefined,
+) {
+  if (!id) return;
+  try {
+    await ctx.storage.delete(id);
+  } catch {
+    /* already gone */
+  }
+}
 
 export const ANALYSIS_VERSION = "proofpix-checks-v1";
 
@@ -223,7 +241,7 @@ export const remove = mutation({
       .withIndex("by_analysis", (q) => q.eq("analysisId", analysis._id))
       .collect();
     for (const a of artifacts) {
-      await ctx.storage.delete(a.storageId);
+      await safeDeleteFile(ctx, a.storageId);
       await ctx.db.delete(a._id);
     }
     const explanations = await ctx.db
@@ -231,8 +249,8 @@ export const remove = mutation({
       .withIndex("by_analysis", (q) => q.eq("analysisId", analysis._id))
       .collect();
     for (const e of explanations) await ctx.db.delete(e._id);
-    if (analysis.imageStorageId) await ctx.storage.delete(analysis.imageStorageId);
-    if (analysis.imageStorageIdB) await ctx.storage.delete(analysis.imageStorageIdB);
+    await safeDeleteFile(ctx, analysis.imageStorageId);
+    await safeDeleteFile(ctx, analysis.imageStorageIdB);
     await ctx.db.delete(analysis._id);
   },
 });
@@ -252,6 +270,8 @@ export const appendStep = internalMutation({
     if (!analysis) throw new Error("Analysis not found.");
     await ctx.db.patch(args.analysisId, {
       ...args.patch,
+      // The pipeline is actively working: reflect that for catalog viewers.
+      status: "running",
       completedSteps: analysis.completedSteps.includes(args.step)
         ? analysis.completedSteps
         : [...analysis.completedSteps, args.step],
@@ -324,7 +344,24 @@ export const saveArtifact = internalMutation({
     meta: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
-    await ctx.db.insert("analysisArtifacts", { ...args });
+    // Upsert by kind: a resumed or retried pipeline step must not leave
+    // duplicate artifacts (or orphaned blobs) behind.
+    const existing = await ctx.db
+      .query("analysisArtifacts")
+      .withIndex("by_analysis", (q) => q.eq("analysisId", args.analysisId))
+      .collect();
+    const same = existing.find((a) => a.kind === args.kind);
+    if (same) {
+      await safeDeleteFile(ctx, same.storageId);
+      await ctx.db.patch(same._id, {
+        storageId: args.storageId,
+        label: args.label,
+        description: args.description,
+        meta: args.meta,
+      });
+    } else {
+      await ctx.db.insert("analysisArtifacts", { ...args });
+    }
   },
 });
 
@@ -409,7 +446,7 @@ export const deleteAccount = mutation({
         .withIndex("by_analysis", (q) => q.eq("analysisId", analysis._id))
         .collect();
       for (const a of artifacts) {
-        await ctx.storage.delete(a.storageId);
+        await safeDeleteFile(ctx, a.storageId);
         await ctx.db.delete(a._id);
       }
       const explanations = await ctx.db
@@ -417,8 +454,8 @@ export const deleteAccount = mutation({
         .withIndex("by_analysis", (q) => q.eq("analysisId", analysis._id))
         .collect();
       for (const e of explanations) await ctx.db.delete(e._id);
-      if (analysis.imageStorageId) await ctx.storage.delete(analysis.imageStorageId);
-      if (analysis.imageStorageIdB) await ctx.storage.delete(analysis.imageStorageIdB);
+      await safeDeleteFile(ctx, analysis.imageStorageId);
+      await safeDeleteFile(ctx, analysis.imageStorageIdB);
       await ctx.db.delete(analysis._id);
     }
 

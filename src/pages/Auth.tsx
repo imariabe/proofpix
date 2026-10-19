@@ -15,8 +15,8 @@ import {
 } from "@/components/ui/input-otp";
 
 import { useAuth } from "@/hooks/use-auth";
-import logo from "@/assets/logo.svg";
-import { ArrowRight, Loader2, Mail, UserX } from "lucide-react";
+import { Wordmark } from "@/components/Logo";
+import { ArrowRight, Loader2, Lock, Mail, UserX } from "lucide-react";
 import { Suspense, useEffect, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router";
 
@@ -110,29 +110,43 @@ function Auth({ redirectAfterAuth }: AuthProps = {}) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="relative min-h-screen flex flex-col bg-background">
+      {/* Instrument-grid backdrop — the lab, not a template */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 opacity-[0.13]"
+        style={{
+          backgroundImage:
+            "linear-gradient(to right, oklch(0.64 0.17 255 / 35%) 1px, transparent 1px), linear-gradient(to bottom, oklch(0.64 0.17 255 / 35%) 1px, transparent 1px)",
+          backgroundSize: "44px 44px",
+          maskImage:
+            "radial-gradient(ellipse 60% 55% at 50% 45%, black 25%, transparent 75%)",
+        }}
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-[-14rem] h-96 w-[42rem] -translate-x-1/2 rounded-full opacity-40 blur-3xl"
+        style={{
+          background: "radial-gradient(closest-side, oklch(0.55 0.2 255 / 30%), transparent)",
+        }}
+      />
 
-      
       {/* Auth Content */}
-      <div className="flex-1 flex items-center justify-center">
-        <div className="flex items-center justify-center h-full flex-col">
-        <Card className="min-w-[350px] pb-0 border shadow-md">
+      <div className="relative flex-1 flex items-center justify-center px-4 py-10">
+        <div className="flex items-center justify-center h-full flex-col gap-6">
+        <Wordmark onClick={() => navigate("/")} />
+        <Card className="min-w-[350px] pb-0 border-white/12 bg-card/85 shadow-[0_0_60px_-25px_oklch(0.64_0.17_255/35%)] backdrop-blur">
           {step === "signIn" ? (
             <>
               <CardHeader className="text-center">
-              <div className="flex justify-center">
-                    <img
-                      src={logo}
-                      alt="Lock Icon"
-                      width={64}
-                      height={64}
-                      className="rounded-lg mb-4 mt-4 cursor-pointer"
-                      onClick={() => navigate("/")}
-                    />
-                  </div>
-                <CardTitle className="text-xl">Get Started</CardTitle>
+                <div className="flex justify-center">
+                  <span className="flex size-12 items-center justify-center rounded-xl border border-primary/25 bg-primary/10 text-primary">
+                    <Lock className="size-6" />
+                  </span>
+                </div>
+                <CardTitle className="text-xl mt-4">Open the workspace</CardTitle>
                 <CardDescription>
-                  Enter your email to log in or sign up
+                  Enter your email to receive a one-time sign-in code
                 </CardDescription>
               </CardHeader>
               <form onSubmit={handleEmailSubmit}>

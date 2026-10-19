@@ -7,7 +7,7 @@
  * the lead this produces. It is a heuristic for guiding review, never proof of
  * alteration (see LIMITATION_NOTES.ela).
  */
-import { decodeImage, type DecodedImage } from "./decode";
+import type { DecodedImage } from "./decode";
 import jpegJs from "jpeg-js";
 
 export const ELA_RECOMPRESS_QUALITY = 90;
