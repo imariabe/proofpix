@@ -1,14 +1,14 @@
 {
-  "name": "freebuff.com application",
-  "short_name": "freebuff.com",
-  "description": "freebuff.com application",
+  "name": "ProofPix — Image Investigation Workspace",
+  "short_name": "ProofPix",
+  "description": "ProofPix — a digital image investigation platform. Examine metadata, run consistency checks, inspect JPEG compression history, compare images, and understand what the evidence can and cannot establish.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#000000",
+  "background_color": "#050b19",
+  "theme_color": "#101a30",
   "icons": [
     {
-      "src": "/logo.svg",
+      "src": "/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any"
